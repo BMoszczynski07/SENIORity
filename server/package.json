@@ -1,0 +1,25 @@
+{
+  "name": "seniority",
+  "version": "1.0.0",
+  "description": "fullstack social media platform (angular+nodejs)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BMoszczynski07/SENIORity.git"
+  },
+  "keywords": [
+    "old",
+    "people",
+    "technology",
+    "forum"
+  ],
+  "author": "Bartosz Moszczyński Władzia Wolska Natalia Przemyłska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BMoszczynski07/SENIORity/issues"
+  },
+  "homepage": "https://github.com/BMoszczynski07/SENIORity#readme"
+}
