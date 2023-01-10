@@ -29,7 +29,11 @@ module.exports = {
       //Allows use of images
       {
         test: /\.(jpg|jpeg|png|svg|gif)$/,
-        use: "file-loader",
+        loader: "file-loader",
+        options: {
+          name: "[fullhash].[ext]",
+          outputPath: "assets",
+        },
       },
     ],
   },
