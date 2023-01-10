@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon index.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BMoszczynski07/SENIORity.git"
@@ -17,9 +18,15 @@
     "forum"
   ],
   "author": "Bartosz Moszczyński Władzia Wolska Natalia Przemyłska",
-  "license": "ISC",
+  "license": "GNU",
   "bugs": {
     "url": "https://github.com/BMoszczynski07/SENIORity/issues"
   },
-  "homepage": "https://github.com/BMoszczynski07/SENIORity#readme"
+  "homepage": "https://github.com/BMoszczynski07/SENIORity#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
 }
