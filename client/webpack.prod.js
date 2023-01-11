@@ -31,4 +31,14 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({ filename: "[fullhash].build.css" }),
     new CleanWebpackPlugin(),
   ],
+  rules: [
+    {
+      test: /\.scss$/,
+      use: [
+        MiniCssExtractPlugin.loader, // Extract css into files
+        "css-loader", // turns css into commonjs
+        "sass-loader", // turns sass into css
+      ],
+    },
+  ],
 });

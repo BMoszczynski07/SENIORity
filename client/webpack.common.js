@@ -21,11 +21,6 @@ module.exports = {
           loader: "svelte-loader",
         },
       },
-      //Allows use of CSS
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
       //Allows use of images
       {
         test: /\.(jpg|jpeg|png|svg|gif)$/,
@@ -34,6 +29,14 @@ module.exports = {
           name: "[fullhash].[ext]",
           outputPath: "assets",
         },
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader", // inject styles into DOM
+          "css-loader", // turns css into commonjs
+          "sass-loader", // turns sass into css
+        ],
       },
     ],
   },
