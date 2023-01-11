@@ -1,5 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap");
+
+$d: "DM Sans", sans-serif;
+$r: "Roboto", sans-serif;
+$bv: "Be Vietnam Pro", sans-serif;
+$l: "Lato", sans-serif;
+$i: "Inter", sans-serif;
+$p: "Poppins", sans-serif;
+$rw: "Raleway", sans-serif;
+
+@mixin flex($align: center, $justify: center, $direction: row, $wrap: wrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin grid($gap, $gtr, $gtc) {
+  display: grid;
+  gap: $gap;
+  grid-template-rows: $gtr;
+  grid-template-columns: $gtc;
+}
+
 body {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
+}
+
+.site {
+  &__logo {
+    color: #000;
+    &__light {
+      color: #14fbff;
+    }
+  }
 }
