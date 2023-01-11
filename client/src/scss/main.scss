@@ -1,0 +1,99 @@
+@import "../global.scss";
+
+.main {
+  &__start-page {
+    overflow: hidden;
+    height: 500px;
+    background: #0f0;
+  }
+
+  &__nav-container {
+    background: rgb(250, 250, 250);
+    width: 100%;
+    height: 70px;
+    @include flex(center, flex-start, nowrap);
+  }
+
+  &__search-input {
+    margin-left: 600px;
+  }
+
+  &__search {
+    position: relative;
+    font-size: 14px;
+    padding: 8px 10px 8px 30px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-family: $dm;
+    font-weight: 700;
+    background: rgb(235, 235, 235);
+
+    &::before {
+      content: url("../assets/microphone.svg");
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// <div class="main">
+//   <nav class="main__nav">
+//     <div class="main__nav-container">
+//       <div class="site__logo">Seniority.pl</div>
+//       <input
+//         type="search"
+//         bind:value={search}
+//         placeholder="Wyszukaj tutaj"
+//         class="main__search"
+//       />
+//       <div class="main__faq">
+//         <span class="main__nav-text">Pytania</span><span class="main__nav-text"
+//           >Pomoc</span
+//         >
+//       </div>
+//       <div class="main__actions">
+//         <button class="main__sign-up-btn" on:click={handleRedirectToLogin}
+//           >Zaloguj się</button
+//         ><i class="main__logo-moon fa-regular fa-moon" use:MoonRef />
+//       </div>
+//     </div>
+//   </nav>
+
+//   <article class="main__article">
+//     <section class="main__start-page">
+//       <img src={bgShape1} alt="bg-img-1" class="bg-img-1" /><img
+//         src={bgShape2}
+//         alt="bg-img-2"
+//         class="bg-img-2"
+//       /><img src={bgShape3} alt="bg-img-3" class="bg-img-3" /><img
+//         src={bgShape4}
+//         alt="bg-img-4"
+//         class="bg-img-4"
+//       /><img src={bgShape5} alt="bg-img-5" class="bg-img-5" /><img
+//         src={bgShape6}
+//         alt="bg-img-6"
+//         class="bg-img-6"
+//       /><img src={bgShape7} alt="bg-img-7" class="bg-img-7" /><img
+//         src={bgShape7}
+//         alt="bg-img-8"
+//         class="bg-img-8"
+//       /><img src={bgShape8} alt="bg-img-9" class="bg-img-9" /><img
+//         src={bgShape8}
+//         alt="bg-img-10"
+//         class="bg-img-10"
+//       />
+
+//       <h1 class="main__title">
+//         Witaj w senior<span class="main__title--light">ity</span>
+//       </h1>
+//       <h2 class="main__subtitle">Cieszymy się, że z nami jesteś</h2>
+//     </section>
+//     <section class="main__start-page" />
+//     <section class="main__start-page" />
+//     <section class="main__start-page" />
+//     <section class="main__start-page" />
+//     <section class="main__start-page" />
+//   </article>
+// </div>
