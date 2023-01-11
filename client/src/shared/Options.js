@@ -1,13 +1,10 @@
 import { writable } from "svelte/store";
 
-export const Language = writable({
-  lang: "pol",
-});
-
-export const DarkTheme = writable(false);
+export const DarkTheme = writable(localStorage.getItem("darkTheme") || "false");
 
 export const handleSwitchTheme = () => {
   DarkTheme.update((currentTheme) => {
+    localStorage.setItem("darkTheme", !currentTheme);
     return !currentTheme;
   });
 };
