@@ -1,0 +1,177 @@
+@import "../global.scss";
+
+.main {
+  &__nav-container {
+    background: rgb(250, 250, 250);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 70px;
+    @include flex(center, flex-start, nowrap);
+    transition: 0.2s;
+
+    &--dark-theme {
+      background: rgb(23, 23, 23);
+    }
+  }
+
+  &__search-input {
+    margin-left: 150px;
+  }
+
+  &__faq {
+    margin-right: 20px;
+  }
+
+  &__search {
+    width: 350px;
+    font-size: 14px;
+    padding: 8px 10px 8px 30px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-family: $dm;
+    font-weight: 700;
+    background: rgb(235, 235, 235);
+    transition: 0.2s;
+
+    &--dark-theme {
+      background: rgb(35, 35, 35);
+      color: #fff;
+    }
+
+    &::placeholder {
+      color: #7e7e7e;
+    }
+
+    &-input {
+      position: relative;
+    }
+  }
+
+  &__microphone {
+    color: #7e7e7e;
+    font-size: 15px;
+
+    &-container {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+      width: 22px;
+      height: 22px;
+      @include flex(center, center);
+      border-radius: 50%;
+      transition: 0.2s;
+      cursor: pointer;
+
+      &--dark-theme:hover {
+        background: lighten(#000, 20%) !important;
+      }
+
+      &:hover {
+        background: darken(#fff, 16%);
+      }
+    }
+  }
+
+  &__nav-right-side {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+  }
+
+  &__nav-text {
+    margin: 0 20px;
+    font-size: 15px;
+    font-family: $dm;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    &--dark-theme {
+      color: #fff;
+    }
+  }
+
+  &__sign-up-btn,
+  &__logo-moon {
+    margin: 0 7px;
+  }
+
+  &__sign-up-btn {
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 2px;
+    border: none;
+    font-family: $dm;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 2px solid #000;
+
+    &--register {
+      color: #000;
+      background: transparent;
+
+      &--dark-theme {
+        color: #fff;
+        border: 2px solid #fff;
+        &:hover {
+          background: lighten(#000, 15%) !important;
+        }
+      }
+
+      &:hover {
+        background: darken(#fff, 12.5%);
+      }
+    }
+
+    &--login:hover {
+      background: lighten(#000, 15%);
+      border: 2px solid lighten(#000, 15%);
+    }
+  }
+
+  &__actions {
+    // background: #0f0;
+    margin-left: 15px;
+    @include flex(center, center);
+  }
+
+  &__logo-moon {
+    font-size: 23px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+
+    &--dark-theme {
+      color: #ff0;
+
+      &:hover {
+        background: lighten(#000, 15%) !important;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+      }
+    }
+
+    &:hover {
+      background: darken(#fff, 12.5%);
+    }
+  }
+}

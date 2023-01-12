@@ -1,0 +1,67 @@
+@import "../global.scss";
+
+.start {
+  &__img-1,
+  &__img-2 {
+    position: absolute;
+  }
+
+  &__img-3 {
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    width: 150px;
+  }
+
+  &__img-4 {
+    position: absolute;
+    bottom: 75px;
+    right: 200px;
+    width: 100px;
+  }
+
+  &__img-1 {
+    top: 70px;
+    right: 0;
+    width: 400px;
+  }
+
+  &__img-2 {
+    left: 0;
+    bottom: 0;
+    transform: rotateX(180deg) rotateY(180deg);
+    width: 300px;
+  }
+
+  &__title {
+    font-size: 43px;
+    font-family: $dm;
+    letter-spacing: -0.75px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-family: $w;
+    font-size: 18px;
+    letter-spacing: -0.6px;
+    color: rgb(112, 112, 112);
+    text-align: center;
+    margin: 0;
+  }
+
+  &__header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+  }
+}
+
+.main {
+  &__start-page {
+    position: relative;
+    height: 100vh;
+  }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Warstwa_1" data-name="Warstwa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 922.68 650.9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #c9c9c9;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: #c9c9c9;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="806.85 133.13 780.28 253.34 917.1 222.46 806.85 133.13"/>
+    <polygon class="cls-1" points="806.85 133.13 763.68 4.28 658.57 92.61 806.85 133.13"/>
+    <polygon class="cls-1" points="658.57 92.61 780.28 253.34 806.85 133.13 658.57 92.61"/>
+    <polygon class="cls-1" points="503.99 4.28 658.57 92.61 613.88 210.84 780.28 253.34 613.88 375.55 470.11 193.24 503.99 4.28"/>
+    <polyline class="cls-1" points="470.11 193.24 400.04 4.28 917.1 4.28 917.1 222.46 806.85 133.13 917.1 4.28"/>
+    <polyline class="cls-1" points="481.22 330.22 470.11 193.24 347.44 118.61 211.32 4.28 400.04 4.28 281.49 261.98"/>
+    <polyline class="cls-1" points="613.88 210.84 613.88 375.55 281.49 261.98 470.11 193.24 613.88 210.84 503.99 4.28"/>
+    <path class="cls-1" d="M780.28,253.34s34.21,178.33,34.21,182.32-200.6-60.11-200.6-60.11l200.6,213.53v-153.42"/>
+    <polygon class="cls-1" points="917.1 222.46 814.49 435.66 888.21 505.4 917.1 222.46"/>
+    <polygon class="cls-1" points="814.49 435.66 814.49 589.09 888.21 505.4 814.49 435.66"/>
+    <polyline class="cls-1" points="814.49 589.09 882.23 639.9 888.21 505.4"/>
+    <polygon class="cls-1" points="481.22 330.22 555.46 484.48 689.98 456.56 613.88 375.55 481.22 330.22"/>
+  </g>
+  <polygon class="cls-1" points="211.32 4.28 281.49 261.98 6.33 4.28 211.32 4.28"/>
+  <polyline class="cls-1" points="6.33 4.28 44.85 142.59 281.49 261.98 555.46 484.48"/>
+  <circle class="cls-2" cx="44.85" cy="142.59" r="11"/>
+  <circle class="cls-2" cx="281.49" cy="261.98" r="11"/>
+  <circle class="cls-2" cx="555.46" cy="484.48" r="11"/>
+  <circle class="cls-2" cx="689.98" cy="456.56" r="11"/>
+  <circle class="cls-2" cx="481.22" cy="330.22" r="11"/>
+  <circle class="cls-2" cx="613.88" cy="375.55" r="11"/>
+  <circle class="cls-2" cx="814.49" cy="589.09" r="11"/>
+  <circle class="cls-2" cx="882.23" cy="639.9" r="11"/>
+  <circle class="cls-2" cx="888.21" cy="505.4" r="11"/>
+  <circle class="cls-2" cx="814.49" cy="435.66" r="11"/>
+  <circle class="cls-2" cx="780.28" cy="253.34" r="11"/>
+  <circle class="cls-2" cx="613.88" cy="210.84" r="11"/>
+  <circle class="cls-2" cx="470.11" cy="193.24" r="11"/>
+  <circle class="cls-2" cx="658.57" cy="92.61" r="11"/>
+  <circle class="cls-2" cx="806.85" cy="133.13" r="11"/>
+  <circle class="cls-2" cx="347.44" cy="118.61" r="11"/>
+</svg>
