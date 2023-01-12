@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import Router from "svelte-spa-router";
   import Login from "./components/Login.svelte";
   import Main from "./components/Main.svelte";
