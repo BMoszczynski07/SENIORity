@@ -12,11 +12,12 @@
   &__container {
     overflow: hidden;
     height: 500px;
-    margin-bottom: 200px;
     position: relative;
     @include flex(center, center);
     background-size: 250px;
     margin-top: 10px;
+    background-size: 150px;
+    background-color: transparent;
   }
 
   &__title {

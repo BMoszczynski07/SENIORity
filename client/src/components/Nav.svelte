@@ -6,15 +6,6 @@
 
   let search;
 
-  let moonRef;
-
-  const MoonRef = (node) => {
-    moonRef = node;
-    moonRef.addEventListener("click", () => {
-      handleSwitchTheme();
-    });
-  };
-
   const handleRedirectToLogin = () => {
     push("/login");
   };
@@ -77,11 +68,13 @@
         >
           Zarejestruj się</button
         >
-        <i
-          class="main__logo-moon fa-regular fa-moon"
+        <button
+          class="main__logo-moon"
           class:main__logo-moon--dark-theme={$DarkTheme === true}
-          use:MoonRef
-        />
+          on:click={handleSwitchTheme}
+        >
+          <i class="main__i fa-regular fa-moon" />
+        </button>
       </div>
     </div>
   </div>

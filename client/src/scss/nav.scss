@@ -128,13 +128,13 @@
       }
 
       &:hover {
-        background: darken(#fff, 12.5%);
+        background: darken(#fff, 12%);
       }
     }
 
     &--login:hover {
-      background: lighten(#000, 15%);
-      border: 2px solid lighten(#000, 15%);
+      background: lighten(#000, 25%);
+      border: 2px solid lighten(#000, 25%);
     }
   }
 
@@ -151,6 +151,11 @@
     transition: 0.2s;
     cursor: pointer;
     position: relative;
+    border: none;
+    background: transparent;
+    width: 34px;
+    height: 34px;
+    @include flex(center, center);
 
     &--dark-theme {
       color: #ff0;

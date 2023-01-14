@@ -1,0 +1,199 @@
+@import "../global.scss";
+
+.settings {
+  width: calc(250px + 58px + 5px);
+  @include flex(flex-start, flex-start);
+  position: fixed;
+  top: 200px;
+  left: -256px;
+  transform: translateX(0);
+  transition: 0.3s ease-in-out;
+
+  &--on {
+    transform: translateX(256px);
+  }
+
+  &__list {
+    background: rgba(232, 232, 232, 0.742);
+    backdrop-filter: blur(7px);
+    width: 250px;
+    height: 350px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow-y: scroll;
+  }
+
+  &__wheelchair {
+    font-size: 33px;
+    color: #fff;
+  }
+
+  &__btn {
+    width: 58px;
+    height: 58px;
+    border: none;
+    background: rgb(109, 99, 255);
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 26px;
+    font-family: $p;
+    font-weight: 600;
+    color: rgb(78, 78, 78);
+    position: absolute;
+    top: 40px;
+    left: 25px;
+  }
+
+  &__icon {
+    font-size: 72px;
+    color: rgb(220, 220, 220);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  &__input-group {
+    &:first-of-type {
+      margin-top: 105px;
+    }
+
+    &--type-checkbox {
+      &:first-of-type {
+        margin-top: 15px;
+      }
+      margin-top: 15px;
+      @include flex(center, flex-start);
+    }
+
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+  &__input-title {
+    font-size: 16px;
+    font-family: $dm;
+    margin-bottom: 2px;
+  }
+
+  &__input-btn {
+    width: 29px;
+    height: 29px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-family: $i;
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  &__input,
+  &__input-btn {
+    background: rgb(216, 216, 216);
+    color: rgb(54, 54, 54);
+  }
+
+  &__input-btn:hover {
+    background: darken(rgb(216, 216, 216), 10%);
+  }
+
+  &__input,
+  &__input-selection {
+    outline: none;
+  }
+
+  &__option {
+    background: rgb(245, 245, 245);
+  }
+
+  &__input {
+    width: 75px;
+    margin: 0 10px;
+    height: 29px;
+    border: none;
+    border-radius: 3px;
+    padding: 0 7.5px;
+    font-family: $dm;
+    font-size: 15px;
+    font-weight: 700;
+    &-selection {
+      margin-left: 0;
+      width: calc(29px * 2 + 75px + 10px * 2);
+    }
+  }
+
+  &__checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    @include flex(center, center);
+
+    &:hover > .settings__checkmark {
+      border: 3px solid rgb(95, 95, 95);
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input[type="checkbox"]:checked ~ &__checkmark::after {
+    display: block;
+  }
+
+  &__checkmark {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgb(145, 145, 145);
+    border-radius: 4px;
+    background: rgb(227, 227, 227);
+
+    &::after {
+      content: "";
+      display: none;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-bottom: 5px solid rgb(104, 104, 104);
+      border-right: 5px solid rgb(104, 104, 104);
+      width: 5px;
+      height: 14px;
+    }
+  }
+
+  &__checkbox-label {
+    margin: 0;
+    margin-left: 6px;
+    font-family: $dm;
+    font-size: 16px;
+    color: rgb(70, 70, 70);
+  }
+}
+
+// <div class="settings__input-group">
+//       <h1 class="settings__input-title">Rozmiar czcionki</h1>
+//       <div class="settings__input-container">
+//         <button class="settings__input-btn">-</button><input
+//           type="number"
+//           placeholder="Rozmiar"
+//           value="1"
+//           class="settings__input"
+//         /><button class="settings__input-btn">+</button>
+//       </div>
+//     </div>

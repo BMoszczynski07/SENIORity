@@ -31,6 +31,8 @@ body {
   overflow-x: hidden !important;
 }
 
+$logo: #0cd8db;
+
 .site {
   &__logo {
     &--dark-theme {
@@ -42,7 +44,7 @@ body {
     font-size: 23px;
     margin-left: 15px;
     &--light {
-      color: #14fbff;
+      color: $logo;
       &--dark-theme {
         color: rgb(255, 255, 0);
       }

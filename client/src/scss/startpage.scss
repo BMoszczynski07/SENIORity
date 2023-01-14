@@ -1,5 +1,17 @@
 @import "../global.scss";
 
+@keyframes circleTranslate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .start {
   &__img-1,
   &__img-2 {
@@ -11,6 +23,7 @@
     top: 120px;
     left: 100px;
     width: 150px;
+    animation: circleTranslate 8.5s ease-in-out infinite;
   }
 
   &__img-4 {
@@ -18,6 +31,8 @@
     bottom: 75px;
     right: 200px;
     width: 100px;
+    animation: circleTranslate 8.5s ease-in-out infinite;
+    animation-delay: 3.5s;
   }
 
   &__img-1 {
