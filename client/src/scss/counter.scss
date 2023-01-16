@@ -15,15 +15,14 @@
     position: relative;
     @include flex(center, center);
     background-size: 250px;
-    margin-top: 10px;
-    background-size: 150px;
-    background-color: transparent;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/email-pattern.png");
+    background-size: 325px;
   }
 
   &__title {
     width: 325px;
     height: 375px;
-    background: rgb(240, 240, 240);
+    background: rgb(224, 224, 224);
     margin-left: 200px;
     border-radius: 5px;
     @include flex(flex-start, center);
@@ -40,8 +39,8 @@
 .tool {
   width: 325px;
   height: 375px;
-  background: rgba(27, 27, 27, 0.808);
-  backdrop-filter: blur(8px);
+  background: rgba(27, 27, 27, 0.674);
+  backdrop-filter: blur(3px);
   padding: 15px;
   border-radius: 5px;
   @include flex(center, center, column);

@@ -1,0 +1,125 @@
+@import "../global.scss";
+
+.footer {
+  background: rgb(233, 233, 233);
+  padding-top: 15px;
+  @include flex(center, center, column);
+
+  &__main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__left-side {
+    margin-left: 15px;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+
+  &__btn {
+    width: 300px;
+    margin: 5px 0;
+    outline: none;
+    border: 3px solid #000;
+    border-radius: 3px;
+    padding: 6px 0;
+    font-family: $i;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    font-size: 15px;
+    cursor: pointer;
+
+    &--login {
+      background: #000;
+      color: #fff;
+    }
+
+    &--register {
+      background: transparent;
+    }
+  }
+
+  &__sources {
+    font-family: "Arial", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 90px;
+    margin-bottom: 0;
+  }
+
+  &__school {
+    margin-top: 25px;
+    width: 500px;
+    text-align: center;
+    padding-top: 5px;
+    border-top: 1px solid rgb(156, 156, 156);
+    color: rgb(156, 156, 156);
+    font-family: $i;
+    letter-spacing: -0.45px;
+  }
+
+  &__center-side {
+    margin-top: 15px;
+    align-self: flex-start;
+  }
+
+  &__menu {
+    display: flex;
+    &-group {
+      display: flex;
+      flex-direction: column;
+      margin-right: 120px;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: rgb(86, 86, 86);
+      font-family: $i;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: -0.4px;
+      margin-bottom: 15px;
+
+      &:hover {
+        color: rgb(30, 30, 30);
+      }
+    }
+  }
+
+  &__logo {
+    font-size: 32px !important;
+    margin-left: 0 !important;
+  }
+
+  &__right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 25px;
+    align-self: flex-start;
+  }
+
+  &__github-link {
+    margin: 5px 0;
+    color: darken($logo, 15%);
+    text-decoration: none;
+    font-family: $i;
+    letter-spacing: -0.55px;
+    font-size: 16px;
+    font-weight: 600;
+
+    &:hover {
+      color: darken($logo, 35%);
+    }
+  }
+
+  &__github-img {
+    width: 150px;
+  }
+}

@@ -14,13 +14,35 @@
   }
 
   &__list {
-    background: rgba(232, 232, 232, 0.742);
+    background: rgba(244, 244, 244, 0.742);
     backdrop-filter: blur(7px);
     width: 250px;
     height: 350px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow-y: scroll;
+    @include flex(center, flex-start);
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: darken(#fff, 17.5%);
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
   }
 
   &__wheelchair {
@@ -40,12 +62,14 @@
 
   &__header {
     position: relative;
+    align-self: flex-start;
   }
 
   &__title {
     margin: 0;
     font-size: 26px;
     font-family: $p;
+    letter-spacing: 0.5px;
     font-weight: 600;
     color: rgb(78, 78, 78);
     position: absolute;
@@ -67,10 +91,11 @@
     }
 
     &--type-checkbox {
-      &:first-of-type {
-        margin-top: 15px;
-      }
-      margin-top: 15px;
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid rgb(139, 139, 139);
+
+      width: 225px;
       @include flex(center, flex-start);
     }
 
@@ -79,8 +104,10 @@
   }
 
   &__input-title {
-    font-size: 16px;
-    font-family: $dm;
+    font-size: 15px;
+    font-family: $i;
+    font-weight: 600;
+    letter-spacing: -0.35px;
     margin-bottom: 2px;
   }
 
@@ -98,7 +125,7 @@
 
   &__input,
   &__input-btn {
-    background: rgb(216, 216, 216);
+    background: rgb(210, 210, 210);
     color: rgb(54, 54, 54);
   }
 
@@ -125,6 +152,9 @@
     font-family: $dm;
     font-size: 15px;
     font-weight: 700;
+    &--font-size {
+      background: rgb(222, 222, 222);
+    }
     &-selection {
       margin-left: 0;
       width: calc(29px * 2 + 75px + 10px * 2);
@@ -161,7 +191,7 @@
     height: 24px;
     border: 3px solid rgb(145, 145, 145);
     border-radius: 4px;
-    background: rgb(227, 227, 227);
+    background: rgb(244, 244, 244);
 
     &::after {
       content: "";
@@ -179,12 +209,90 @@
 
   &__checkbox-label {
     margin: 0;
-    margin-left: 6px;
-    font-family: $dm;
+    margin-left: 10px;
+    font-family: $i;
+    letter-spacing: -0.35px;
     font-size: 16px;
     color: rgb(70, 70, 70);
   }
+
+  &__themes {
+    @include flex(center, flex-start);
+
+    &-title {
+      margin-right: 35px;
+      font-size: 21px;
+      font-family: $i;
+      letter-spacing: -0.35px;
+    }
+  }
+
+  &__theme {
+    margin: 0 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    outline: none;
+    border: 4px solid rgb(171, 171, 171);
+    cursor: pointer;
+    transition: 0.2s;
+
+    &--selected {
+      border: 4px solid $logo;
+    }
+
+    &--light {
+      background: rgb(255, 255, 255);
+
+      &:hover {
+        background: darken(#fff, 10%);
+      }
+    }
+
+    &--dark {
+      background: rgb(50, 50, 50);
+
+      &:hover {
+        background: lighten(rgb(50, 50, 50), 10%);
+      }
+    }
+  }
+
+  &__restore-btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 90%;
+    background: #000;
+    color: #fff;
+    outline: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: $dm;
+    cursor: pointer;
+    border: none;
+    padding: 3px 0;
+    font-weight: 600;
+
+    &:hover {
+      background: lighten(#000, 20%);
+    }
+  }
 }
+
+// <div class="settings__input-group">
+//       <div class="settings__themes">
+//         <h1 class="settings__themes-title">Motywy</h1>
+//         <button
+//           class="settings__theme"
+//           class:settings__theme--selected={themeSelected === 0}
+//         /><button
+//           class="settings__theme"
+//           class:settings__theme--selected={themeSelected === 1}
+//         />
+//       </div>
+//     </div>
 
 // <div class="settings__input-group">
 //       <h1 class="settings__input-title">Rozmiar czcionki</h1>

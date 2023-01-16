@@ -5,10 +5,7 @@
 </script>
 
 <section class="counter">
-  <div
-    class="counter__container"
-    style="background-image: url('../assets/layout-bg.png')"
-  >
+  <div class="counter__container">
     <CounterTool />
     <img src={person} alt="person" class="counter__person" />
     <header class="counter__title">

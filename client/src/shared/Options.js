@@ -8,15 +8,17 @@ export const Font = writable({
   contentFamily: localStorage.getItem("font-family-content") || "Inter",
 });
 
-export const DarkTheme = writable(localStorage.getItem("darkTheme") || false);
+export const DarkTheme = writable(
+  localStorage.getItem("darkTheme") ? localStorage.getItem("darkTheme") : false
+);
 
 export const Preferences = writable({
-  underlineAnchors: localStorage.getItem("underlineAnchors") || false,
+  underlineAnchors: localStorage.getItem("underline-anchors") || false,
 });
 
 export const handleToggleAnchors = () => {
   Preferences.update((v) => {
-    localStorage.setItem("underlineAnchors", !v.underlineAnchors);
+    localStorage.setItem("underline-anchors", !v.underlineAnchors);
     return { underlineAnchors: !v.underlineAnchors, ...v };
   });
 };
@@ -69,3 +71,5 @@ export const handleSwitchLang = (lang) => {
     return v;
   });
 };
+
+export const handleRestore = () => {};

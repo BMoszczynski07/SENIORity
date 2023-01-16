@@ -1,7 +1,26 @@
 <script>
   import "../scss/settings.scss";
-  import { Font, Preferences, handleChangeFontSize } from "../shared/Options";
+  import {
+    Font,
+    Preferences,
+    handleChangeFontSize,
+    DarkTheme,
+    handleSwitchTheme,
+    handleRestore,
+  } from "../shared/Options";
   let settings = false;
+
+  let themeSelected = $DarkTheme ? 0 : 1;
+
+  $: {
+    themeSelected = $DarkTheme ? 0 : 1;
+  }
+
+  const handleSwitchThemeSelect = (id) => {
+    if (id === themeSelected) return;
+    themeSelected = id;
+    handleSwitchTheme();
+  };
 </script>
 
 <div class="settings" class:settings--on={settings}>
@@ -25,7 +44,7 @@
           type="number"
           placeholder="Rozmiar"
           bind:value={$Font.size}
-          class="settings__input"
+          class="settings__input settings__input--font-size"
         /><button
           class="settings__input-btn"
           on:click={() => {
@@ -143,7 +162,9 @@
       </div>
     </div>
 
-    <div class="settings__input-group settings__input-group--type-checkbox">
+    <div
+      class="settings__input-group settings__input-group--type-checkbox settings__input-group--type-checkbox--first"
+    >
       <label class="settings__checkbox-container">
         <input
           type="checkbox"
@@ -155,6 +176,29 @@
         <h5 class="settings__checkbox-label">Podkreślone linki</h5>
       </label>
     </div>
+
+    <div class="settings__input-group">
+      <div class="settings__themes">
+        <h1 class="settings__themes-title">Motywy</h1>
+        <button
+          class="settings__theme settings__theme--light"
+          class:settings__theme--selected={themeSelected === 0}
+          on:click={() => {
+            handleSwitchThemeSelect(0);
+          }}
+        /><button
+          class="settings__theme settings__theme--dark"
+          class:settings__theme--selected={themeSelected === 1}
+          on:click={() => {
+            handleSwitchThemeSelect(1);
+          }}
+        />
+      </div>
+    </div>
+
+    <button class="settings__restore-btn" on:click={handleRestore}
+      >Reset ustawień</button
+    >
   </aside>
   <button
     class="settings__btn"
