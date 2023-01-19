@@ -2,7 +2,7 @@
 
 .footer {
   background: rgb(233, 233, 233);
-  padding-top: 15px;
+  padding-top: 30px;
   @include flex(center, center, column);
 
   &__main-content {
@@ -10,10 +10,19 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 120px;
   }
 
   &__left-side {
+    width: 330px;
+    // background: #f00;
+    position: relative;
     margin-left: 15px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
   }
 
   &__btns {
@@ -49,24 +58,25 @@
     font-family: "Arial", sans-serif;
     font-weight: 500;
     font-style: italic;
-    margin-top: 90px;
-    margin-bottom: 0;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    color: rgb(123, 123, 123);
   }
 
   &__school {
-    margin-top: 25px;
     width: 500px;
     text-align: center;
     padding-top: 5px;
     border-top: 1px solid rgb(156, 156, 156);
-    color: rgb(156, 156, 156);
+    color: rgb(123, 123, 123);
     font-family: $i;
+    font-weight: 400;
     letter-spacing: -0.45px;
   }
 
   &__center-side {
-    margin-top: 15px;
-    align-self: flex-start;
+    height: 100%;
   }
 
   &__menu {
@@ -102,17 +112,16 @@
     flex-direction: column;
     align-items: center;
     margin-right: 25px;
-    align-self: flex-start;
+    height: 100%;
   }
 
   &__github-link {
-    margin: 5px 0;
     color: darken($logo, 15%);
     text-decoration: none;
     font-family: $i;
     letter-spacing: -0.55px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
 
     &:hover {
       color: darken($logo, 35%);

@@ -9,14 +9,9 @@
       <header class="footer__logo site__logo">
         Senior<span class="footer__logo-light site__logo--light">ity</span>
       </header>
-      <div class="footer__btns">
-        <button class="footer__btn footer__btn--login">Zaloguj się</button
-        ><button class="footer__btn footer__btn--register"
-          >Zarejestruj się</button
-        >
-      </div>
       <h5 class="footer__sources">
-        źródła zdjęć: pixabay.com, fontawesome.com, pngimg.com
+        zdjęcia: pixabay.com, pngimg.com ikony: fontawesome.com czcionki:
+        fonts.google.com
       </h5>
     </div>
 

@@ -7,7 +7,7 @@
   import startPage3 from "../assets/start-page-3.svg";
 </script>
 
-<section class="main__start-page">
+<section class="main__start-page --main-page__section">
   <img src={startPage1} alt="net-1" class="start__img-1" />
   <img src={startPage1} alt="net-2" class="start__img-2" />
   <img src={startPage2} alt="img-3" class="start__img-3" />

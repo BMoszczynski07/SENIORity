@@ -14,9 +14,8 @@
     height: 500px;
     position: relative;
     @include flex(center, center);
-    background-size: 250px;
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/email-pattern.png");
-    background-size: 325px;
+    background-size: 350px;
+    background-color: transparent;
   }
 
   &__title {
@@ -40,9 +39,12 @@
   width: 325px;
   height: 375px;
   background: rgba(27, 27, 27, 0.674);
-  backdrop-filter: blur(3px);
-  padding: 15px;
+  backdrop-filter: blur(8px);
+  &--dark-mode {
+    backdrop-filter: blur(35px);
+  }
   border-radius: 5px;
+  padding: 15px;
   @include flex(center, center, column);
 
   &__counter {

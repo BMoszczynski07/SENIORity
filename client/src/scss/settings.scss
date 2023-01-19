@@ -4,6 +4,7 @@
   width: calc(250px + 58px + 5px);
   @include flex(flex-start, flex-start);
   position: fixed;
+  z-index: 3;
   top: 200px;
   left: -256px;
   transform: translateX(0);
@@ -14,8 +15,8 @@
   }
 
   &__list {
-    background: rgba(244, 244, 244, 0.742);
-    backdrop-filter: blur(7px);
+    background: rgba(23, 23, 23, 0.742);
+    backdrop-filter: blur(15px);
     width: 250px;
     height: 350px;
     border-top-right-radius: 5px;
@@ -68,18 +69,18 @@
   &__title {
     margin: 0;
     font-size: 26px;
-    font-family: $p;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-    color: rgb(78, 78, 78);
+    font-family: $dm;
+    letter-spacing: -0.25px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
     position: absolute;
-    top: 40px;
-    left: 25px;
+    top: 38px;
+    left: 30px;
   }
 
   &__icon {
     font-size: 72px;
-    color: rgb(220, 220, 220);
+    color: rgb(97, 97, 97);
     position: absolute;
     top: 15px;
     left: 15px;
@@ -91,8 +92,8 @@
     }
 
     &--type-checkbox {
-      margin-top: 25px;
-      padding-top: 25px;
+      margin-top: 20px;
+      padding-top: 20px;
       border-top: 1px solid rgb(139, 139, 139);
 
       width: 225px;
@@ -104,10 +105,11 @@
   }
 
   &__input-title {
-    font-size: 15px;
+    font-size: 14px;
+    color: rgb(202, 202, 202);
     font-family: $i;
-    font-weight: 600;
-    letter-spacing: -0.35px;
+    font-weight: 400;
+    letter-spacing: -0.45px;
     margin-bottom: 2px;
   }
 
@@ -187,8 +189,8 @@
   &__checkmark {
     position: relative;
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 19px;
+    height: 19px;
     border: 3px solid rgb(145, 145, 145);
     border-radius: 4px;
     background: rgb(244, 244, 244);
@@ -200,45 +202,53 @@
       top: 45%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(45deg);
-      border-bottom: 5px solid rgb(104, 104, 104);
-      border-right: 5px solid rgb(104, 104, 104);
-      width: 5px;
-      height: 14px;
+      border-bottom: 4px solid rgb(104, 104, 104);
+      border-right: 4px solid rgb(104, 104, 104);
+      width: 4px;
+      height: 12px;
     }
   }
 
   &__checkbox-label {
     margin: 0;
-    margin-left: 10px;
+    margin-left: 7.5px;
     font-family: $i;
-    letter-spacing: -0.35px;
-    font-size: 16px;
-    color: rgb(70, 70, 70);
+    font-weight: 400;
+    letter-spacing: -0.25px;
+    font-size: 15px;
+    color: rgb(237, 237, 237);
   }
 
   &__themes {
     @include flex(center, flex-start);
+    margin-top: 15px;
+    margin-bottom: 15px;
 
     &-title {
+      margin-top: 0;
+      margin-bottom: 0;
       margin-right: 35px;
-      font-size: 21px;
+      font-size: 17px;
       font-family: $i;
-      letter-spacing: -0.35px;
+      font-weight: 400;
+      letter-spacing: -0.2px;
+      color: rgb(237, 237, 237);
     }
   }
 
   &__theme {
+    padding: 0;
     margin: 0 10px;
     width: 24px;
     height: 24px;
     border-radius: 50%;
     outline: none;
-    border: 4px solid rgb(171, 171, 171);
     cursor: pointer;
     transition: 0.2s;
+    border: 3px solid #9f9f9f;
 
     &--selected {
-      border: 4px solid $logo;
+      border: 3px solid $logo;
     }
 
     &--light {
@@ -263,9 +273,9 @@
     margin-right: auto;
     margin-bottom: 10px;
     margin-top: 10px;
-    width: 90%;
-    background: #000;
-    color: #fff;
+    width: 93%;
+    background: #fff;
+    color: #000;
     outline: none;
     border-radius: 3px;
     font-size: 16px;
@@ -276,7 +286,7 @@
     font-weight: 600;
 
     &:hover {
-      background: lighten(#000, 20%);
+      background: darken(#fff, 20%);
     }
   }
 }
