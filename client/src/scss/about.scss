@@ -52,10 +52,11 @@
 
   &__i {
     align-self: center;
-    min-width: 32px;
+    // background: #f00;
+    min-width: 40px;
     min-height: 42px;
-    margin-right: 20px;
-    padding-right: 20px;
+    margin-right: 15px;
+    padding-right: 15px;
     font-size: 21px;
     // background: #f00;
     @include flex(center, flex-end);

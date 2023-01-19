@@ -5,7 +5,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-27px);
   }
   100% {
     transform: translateY(0);
@@ -55,6 +55,13 @@
     font-weight: 600;
     margin: 0;
     text-align: center;
+    opacity: 0;
+    transform: translateX(-20%);
+    &--on {
+      transition: 0.45s;
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   &__subtitle {
@@ -64,6 +71,13 @@
     color: rgb(112, 112, 112);
     text-align: center;
     margin: 0;
+    opacity: 0;
+    transform: translateX(20%);
+    &--on {
+      transition: 0.45s;
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   &__header {
