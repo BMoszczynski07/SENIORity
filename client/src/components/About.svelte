@@ -12,7 +12,7 @@
     <h1 class="about__title">Seniority to przede wszystkim:</h1>
 
     <div class="about__tiles">
-      <div class="about__tile" class:about__tile--on={tiles} style="--x: 0">
+      <div class="about__tile" class:about__tile--on={tiles} style="--x: 0s">
         <span class="about__i"> UI </span>
         <p class="about__desc">
           Przejrzysty i czytelny wygląd strony zapewniający wszystkim
@@ -20,7 +20,7 @@
         </p>
       </div>
 
-      <div class="about__tile" class:about__tile--on={tiles} style="--x: 0.2">
+      <div class="about__tile" class:about__tile--on={tiles} style="--x: 0.2s">
         <span class="about__i"><i class="fa-solid fa-people-group" /></span>
         <p class="about__desc">
           Uprzejma społeczność osób gotowych pomóc Ci z każdym Twoim problemem,
@@ -28,7 +28,7 @@
         </p>
       </div>
 
-      <div class="about__tile" class:about__tile--on={tiles} style="--x: 0.4">
+      <div class="about__tile" class:about__tile--on={tiles} style="--x: 0.4s">
         <span class="about__i"><i class="fa-solid fa-gears" /></span>
         <p class="about__desc">
           Sprawna moderacja nadzorująca kontent na platformie i usuwająca

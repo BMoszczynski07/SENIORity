@@ -1,3 +1,4 @@
+import { onMount } from "svelte/internal";
 import { writable } from "svelte/store";
 
 export const Language = writable(localStorage.getItem("language") || "pol");
@@ -8,9 +9,9 @@ export const Font = writable({
   contentFamily: localStorage.getItem("font-family-content") || "Inter",
 });
 
-export const DarkTheme = writable(
-  localStorage.getItem("darkTheme") ? localStorage.getItem("darkTheme") : false
-);
+export const SiteThemes = writable({
+  theme: localStorage.getItem("theme") || "light",
+});
 
 export const Preferences = writable({
   underlineAnchors: localStorage.getItem("underline-anchors") || false,
@@ -24,9 +25,11 @@ export const handleToggleAnchors = () => {
 };
 
 export const handleSwitchTheme = () => {
-  DarkTheme.update((currentTheme) => {
-    localStorage.setItem("darkTheme", !currentTheme);
-    return !currentTheme;
+  SiteThemes.update((v) => {
+    v.theme = v.theme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", v.theme);
+    console.log(document.querySelectorAll("section"));
+    return { ...v };
   });
 };
 

@@ -7,6 +7,11 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%);
+    opacity: 0;
+    &--on {
+      animation: personAnimate 0.45s forwards;
+      animation-delay: 0.3s;
+    }
   }
 
   &__container {
@@ -19,6 +24,12 @@
   }
 
   &__title {
+    opacity: 0;
+    transform: translateX(20%);
+    &--on {
+      animation: slideFromRight 0.45s forwards;
+      animation-delay: 0.3s;
+    }
     width: 325px;
     height: 375px;
     background: rgb(224, 224, 224);
@@ -36,12 +47,18 @@
 }
 
 .tool {
+  opacity: 0;
+  transform: translateX(-20%);
+  &--on {
+    animation: slideFromLeft 0.45s forwards;
+    animation-delay: 0.3s;
+  }
   width: 325px;
   height: 375px;
-  background: rgba(27, 27, 27, 0.674);
-  backdrop-filter: blur(8px);
+  background: rgba(27, 27, 27, 0.927);
+  // backdrop-filter: blur(8px);
   &--dark-mode {
-    backdrop-filter: blur(35px);
+    // backdrop-filter: blur(35px);
   }
   border-radius: 5px;
   padding: 15px;

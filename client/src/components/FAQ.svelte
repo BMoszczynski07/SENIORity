@@ -16,6 +16,7 @@
         wiadomości znajduje. Nastąpi przekierowanie do platformy seniority gdzie
         będzie można się zalogować. Po wprowadzeniu danych logowania (imię,
         nazwisko, hasło) będzie można korzystać z pełni możliwości platformy.`,
+      delay: 0.1,
     },
     {
       id: 1,
@@ -27,6 +28,7 @@
         podkreślenie linków albo zmienić czcionkę. Jest to możliwe po wysunięciu
         rozsuwanego menu. Aby to zrobić należy kliknąć w niebieską ikonę z
         ludzikiem na wózku po lewej stronie.`,
+      delay: 0.2,
     },
     {
       id: 2,
@@ -38,6 +40,7 @@
         dlatego możliwe jest tworzenie spotkań integracyjnych na stronie,
         prowadzenie wszelkich dyskusji, oraz podstawowy cel platformy, czyli
         nauka obsługi urządzeń elektronicznych przez artykuły i tutoriale.`,
+      delay: 0.3,
     },
   ];
 
@@ -48,6 +51,8 @@
     }
     questionSelected = false;
   };
+
+  export let faq;
 </script>
 
 <section class="faq">
@@ -62,6 +67,8 @@
       <div
         class="faq__question"
         class:faq__question--selected={questionSelected === index}
+        class:faq__question--on={faq}
+        style="--i: {question.delay}s"
       >
         <div class="faq__container">
           <h1 class="faq__question-title">{question.title}</h1>

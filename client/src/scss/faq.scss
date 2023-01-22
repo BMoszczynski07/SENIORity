@@ -38,6 +38,13 @@
     &--selected {
       height: 300px;
     }
+    opacity: 0;
+    transform: scale(0.9);
+
+    &--on {
+      animation: animate-in 0.4s forwards;
+      animation-delay: var(--i);
+    }
   }
 
   &__container {

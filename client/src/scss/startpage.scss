@@ -58,9 +58,7 @@
     opacity: 0;
     transform: translateX(-20%);
     &--on {
-      transition: 0.45s;
-      opacity: 1;
-      transform: translateX(0);
+      animation: slideFromLeft 0.45s forwards;
     }
   }
 
@@ -74,9 +72,7 @@
     opacity: 0;
     transform: translateX(20%);
     &--on {
-      transition: 0.45s;
-      opacity: 1;
-      transform: translateX(0);
+      animation: slideFromRight 0.45s forwards;
     }
   }
 
