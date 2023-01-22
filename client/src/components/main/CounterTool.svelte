@@ -1,6 +1,6 @@
 <script>
-  import "../scss/counter.scss";
-  import { SiteThemes } from "../shared/Options";
+  import "../../scss/counter.scss";
+  import { SiteThemes } from "../../shared/Options";
 
   export let counter;
 </script>

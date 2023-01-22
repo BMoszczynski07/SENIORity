@@ -1,6 +1,6 @@
 <script>
-  import "../scss/about.scss";
-  import aboutBg from "../assets/about-bg.jpg";
+  import "../../scss/about.scss";
+  import aboutBg from "../../assets/about-bg.jpg";
 
   export let tiles;
 </script>

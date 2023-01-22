@@ -1,15 +1,16 @@
 <script>
-  import "../scss/settings.scss";
+  import "../../scss/settings.scss";
   import {
     Font,
-    Preferences,
     handleChangeFontSize,
     SiteThemes,
     handleSwitchTheme,
     handleRestore,
-  } from "../shared/Options";
+    handleToggleAnchors,
+    Preferences,
+  } from "../../shared/Options";
 
-  import FontsList from "../shared/FontsList";
+  import FontsList from "../../shared/FontsList";
 
   let settings = false;
 
@@ -102,7 +103,8 @@
         <label class="settings__checkbox-container">
           <input
             type="checkbox"
-            bind:value={$Preferences.underlineAnchors}
+            on:click={handleToggleAnchors}
+            checked={$Preferences.underlineAnchors}
             class="settings__checkbox"
           />
 

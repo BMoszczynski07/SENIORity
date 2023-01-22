@@ -1,5 +1,5 @@
 <script>
-  import "../scss/faq.scss";
+  import "../../scss/faq.scss";
 
   let questionSelected = false;
 

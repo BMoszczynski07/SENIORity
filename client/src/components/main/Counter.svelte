@@ -1,8 +1,8 @@
 <script>
-  import "../scss/counter.scss";
-  import person from "../assets/person.svg";
+  import "../../scss/counter.scss";
+  import person from "../../assets/person.svg";
   import CounterTool from "./CounterTool.svelte";
-  import layout from "../assets/layout-bg.png";
+  import layout from "../../assets/layout-bg.png";
 
   export let counter;
 </script>

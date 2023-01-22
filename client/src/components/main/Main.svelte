@@ -1,6 +1,6 @@
 <script>
-  import { SiteThemes } from "../shared/Options";
-  import "../scss/main.scss";
+  import { SiteThemes } from "../../shared/Options";
+  import "../../scss/main.scss";
   import NavComponent from "./Nav.svelte";
   import StartPage from "./StartPage.svelte";
   import Counter from "./Counter.svelte";
@@ -9,7 +9,7 @@
   import About from "./About.svelte";
   import Footer from "./Footer.svelte";
   import { onMount } from "svelte";
-  import { isUserLoggedIn } from "../shared/User";
+  import { isUserLoggedIn } from "../../shared/User";
 
   const sections = document.querySelectorAll("section");
 
@@ -85,7 +85,7 @@
   });
 </script>
 
-<div class="main" class:main--dark-theme={$SiteThemes.theme === "dark"}>
+<main class="main" class:main--dark-theme={$SiteThemes.theme === "dark"}>
   <NavComponent />
   <article class="main__articles">
     <StartPage {startPage} />
@@ -95,4 +95,4 @@
   </article>
   <Settings />
   <Footer />
-</div>
+</main>

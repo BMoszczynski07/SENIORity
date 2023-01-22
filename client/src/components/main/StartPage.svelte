@@ -1,9 +1,9 @@
 <script>
-  import "../scss/main.scss";
-  import "../scss/startpage.scss";
-  import startPage1 from "../assets/start-page-1.svg";
-  import startPage2 from "../assets/start-page-2.svg";
-  import startPage3 from "../assets/start-page-3.svg";
+  import "../../scss/main.scss";
+  import "../../scss/startpage.scss";
+  import startPage1 from "../../assets/start-page-1.svg";
+  import startPage2 from "../../assets/start-page-2.svg";
+  import startPage3 from "../../assets/start-page-3.svg";
 
   export let startPage;
 </script>

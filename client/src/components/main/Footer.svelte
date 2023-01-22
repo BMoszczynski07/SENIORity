@@ -1,6 +1,6 @@
 <script>
-  import "../scss/footer.scss";
-  import github from "../assets/github.png";
+  import "../../scss/footer.scss";
+  import github from "../../assets/github.png";
 </script>
 
 <footer class="footer">

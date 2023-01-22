@@ -1,7 +1,7 @@
 <script>
-  import "../scss/main.scss";
-  import "../scss/nav.scss";
-  import { handleSwitchTheme, SiteThemes } from "../shared/Options";
+  import "../../scss/main.scss";
+  import "../../scss/nav.scss";
+  import { handleSwitchTheme, SiteThemes } from "../../shared/Options";
 
   let search;
 </script>
