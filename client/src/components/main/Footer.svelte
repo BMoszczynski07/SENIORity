@@ -6,8 +6,8 @@
 <footer class="footer">
   <div class="footer__main-content">
     <div class="footer__left-side">
-      <header class="footer__logo site__logo">
-        Senior<span class="footer__logo-light site__logo--light">ity</span>
+      <header class="footer__logo global__logo">
+        Senior<span class="footer__logo-light global__logo--light">ity</span>
       </header>
       <h5 class="footer__sources">
         zdjęcia: pixabay.com, pngimg.com ikony: fontawesome.com czcionki:

@@ -2,6 +2,7 @@
   import Router from "svelte-spa-router";
   import Login from "./components/login/Login.svelte";
   import Main from "./components/main/Main.svelte";
+  import Settings from "./components/main/Settings.svelte";
   import NotFound from "./components/not-found/NotFound.svelte";
   import Register from "./components/register/Register.svelte";
 
@@ -15,4 +16,5 @@
 
 <div>
   <Router {routes} />
+  <Settings />
 </div>

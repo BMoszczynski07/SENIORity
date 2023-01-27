@@ -142,7 +142,8 @@
   }
 
   &__option {
-    background: rgb(245, 245, 245);
+    background: rgb(21, 21, 21);
+    color: rgb(118, 118, 118);
   }
 
   &__input {
@@ -164,58 +165,28 @@
     }
   }
 
-  &__checkbox-container {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    @include flex(center, center);
+  // <div
+  //       class="settings__input-group settings__input-group--type-checkbox settings__input-group--type-checkbox--first"
+  //     >
+  //       <label class="settings__checkbox-container">
+  //         <input
+  //           type="checkbox"
+  //           on:click={handleToggleAnchors}
+  //           checked={$Preferences.underlineAnchors}
+  //           class="settings__checkbox"
+  //         />
 
-    &:hover > .settings__checkmark {
-      border: 3px solid rgb(95, 95, 95);
-    }
-  }
-
-  &__checkbox {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  input[type="checkbox"]:checked ~ &__checkmark::after {
-    display: block;
-  }
-
-  &__checkmark {
-    position: relative;
-    display: inline-block;
-    width: 19px;
-    height: 19px;
-    border: 3px solid rgb(145, 145, 145);
-    border-radius: 4px;
-    background: rgb(58, 58, 58);
-
-    &::after {
-      content: "";
-      display: none;
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      border-bottom: 4px solid rgb(145, 145, 145);
-      border-right: 4px solid rgb(145, 145, 145);
-      width: 4px;
-      height: 12px;
-    }
-  }
+  //         <span class="settings__checkmark" />
+  //         <h5 class="settings__checkbox-label">Podkreślone linki</h5>
+  //       </label>
+  //     </div>
 
   &__checkbox-label {
     margin: 0;
     margin-left: 7.5px;
     font-family: $i;
     font-weight: 400;
-    letter-spacing: -0.25px;
+    letter-spacing: -0.2px;
     font-size: 15px;
     color: rgb(178, 178, 178);
   }

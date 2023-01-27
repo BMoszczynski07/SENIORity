@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --config webpack.dev.js --open --port 3000"
   },
   "author": "Bartosz Moszczyński Władysława Wolska Natalia Przemyłska",
-  "license": "GNU",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/polyfill": "^7.12.1",

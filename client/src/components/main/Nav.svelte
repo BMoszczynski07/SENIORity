@@ -12,12 +12,12 @@
     class:main__nav-container--dark-theme={$SiteThemes.theme === "dark"}
   >
     <div
-      class="site__logo"
-      class:site__logo--dark-theme={$SiteThemes.theme === "dark"}
+      class="global__logo"
+      class:global__logo--dark-theme={$SiteThemes.theme === "dark"}
     >
       Senior<span
-        class="site__logo--light"
-        class:site__logo--light--dark-theme={$SiteThemes.theme === "dark"}
+        class="global__logo--light"
+        class:global__logo--light--dark-theme={$SiteThemes.theme === "dark"}
         >ity</span
       >.pl
     </div>

@@ -83,8 +83,10 @@ $logo: #0cd8db;
   color: #000;
 }
 
-.site {
+.global {
+  // global styles
   &__logo {
+    text-decoration: none;
     &--dark-theme {
       color: #fff;
     }
@@ -98,6 +100,52 @@ $logo: #0cd8db;
       &--dark-theme {
         color: rgb(255, 255, 0);
       }
+    }
+  }
+
+  &__checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    @include flex(center, center);
+
+    &:hover > .settings__checkmark {
+      border: 3px solid rgb(95, 95, 95);
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input[type="checkbox"]:checked ~ &__checkmark::after {
+    display: block;
+  }
+
+  &__checkmark {
+    position: relative;
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    border: 3px solid rgb(145, 145, 145);
+    border-radius: 4px;
+    background: rgb(58, 58, 58);
+
+    &::after {
+      content: "";
+      display: none;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-bottom: 4px solid rgb(145, 145, 145);
+      border-right: 4px solid rgb(145, 145, 145);
+      width: 4px;
+      height: 12px;
     }
   }
 }

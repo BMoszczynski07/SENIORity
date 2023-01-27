@@ -93,6 +93,5 @@
     <Faq {faq} />
     <About {tiles} />
   </article>
-  <Settings />
   <Footer />
 </main>

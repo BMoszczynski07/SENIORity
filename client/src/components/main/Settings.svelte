@@ -17,7 +17,7 @@
   let themeSelected = $SiteThemes.theme === "light" ? 0 : 1;
 
   $: {
-    themeSelected = $SiteThemes.theme === false ? 0 : 1;
+    themeSelected = $SiteThemes.theme === "light" ? 0 : 1;
   }
 
   const handleSwitchThemeSelect = (id) => {
@@ -46,6 +46,16 @@
               handleChangeFontSize({ type: "-" });
             }}>-</button
           ><input
+            min="0.50"
+            max="1.5"
+            step="0.05"
+            on:input={(e) => {
+              if (e.target.value > 1.5) {
+                e.target.value = 1.5;
+              } else if (e.target.value < 0.5) {
+                e.target.value = 0.5;
+              }
+            }}
             type="number"
             placeholder="Rozmiar"
             bind:value={$Font.size}
@@ -100,15 +110,15 @@
       <div
         class="settings__input-group settings__input-group--type-checkbox settings__input-group--type-checkbox--first"
       >
-        <label class="settings__checkbox-container">
+        <label class="global__checkbox-container">
           <input
             type="checkbox"
             on:click={handleToggleAnchors}
             checked={$Preferences.underlineAnchors}
-            class="settings__checkbox"
+            class="global__checkbox"
           />
 
-          <span class="settings__checkmark" />
+          <span class="global__checkmark" />
           <h5 class="settings__checkbox-label">Podkreślone linki</h5>
         </label>
       </div>

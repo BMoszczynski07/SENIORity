@@ -1,0 +1,233 @@
+@import "../global.scss";
+
+.login {
+  min-height: 100vh;
+  @include flex(center, center);
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.35;
+  }
+
+  &__container {
+    width: 310px;
+    height: 475px;
+    padding: 20px;
+    background: rgb(30, 30, 30);
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: rgb(113, 113, 113);
+    line-height: 0;
+  }
+
+  &__logo {
+    color: rgb(237, 237, 237) !important;
+    font-size: 26px !important;
+    margin-left: 0 !important;
+    line-height: 32px;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    font-family: $i;
+    font-weight: 400;
+  }
+
+  &__form {
+    margin-top: 25px;
+  }
+
+  &__input {
+    outline: none;
+    // border: 2px solid rgb(40, 40, 40);
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 5px;
+    width: 90%;
+    border-radius: 4px;
+    background: rgb(54, 54, 54);
+    font-family: $dm;
+    margin-top: 3px;
+    color: rgb(165, 165, 165);
+
+    &-container {
+      margin-top: 15px;
+    }
+  }
+
+  &__label {
+    color: rgb(198, 198, 198);
+    font-family: $i;
+    font-size: 14px;
+    letter-spacing: -0.25px;
+  }
+
+  &__btn {
+    outline: none;
+    background: rgb(54, 54, 54);
+    border: none;
+    font-size: 15px;
+    color: rgb(126, 126, 126);
+    cursor: pointer;
+    font-family: $dm;
+    font-weight: 500;
+    letter-spacing: -0.25px;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 7px 0;
+    border-radius: 4px;
+    text-align: left;
+    transition: 0.25s;
+
+    &-platform {
+      &--google:hover {
+        background: rgb(236, 236, 236);
+        color: rgb(22, 22, 22);
+      }
+
+      &--facebook:hover {
+        background: rgb(67, 80, 255);
+        color: #fff;
+      }
+
+      &--apple:hover {
+        background: #000;
+        color: #fff;
+      }
+    }
+
+    &-label {
+      margin-left: 5px;
+    }
+
+    &-icon {
+      margin-left: 13px !important;
+    }
+
+    &--login {
+      letter-spacing: -0.1px;
+      text-align: center;
+      font-size: 15px;
+      padding: 7.5px 0;
+      width: 110px;
+      margin-top: 25px;
+      margin-bottom: 0;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+  }
+
+  &__site-subtext {
+    margin-top: 7px;
+    margin-bottom: 0;
+    font-family: $i;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(101, 101, 101);
+
+    &-register {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__site-link {
+    color: rgb(126, 126, 126);
+  }
+
+  &__or {
+    color: #fff;
+    // background: #0f0;
+    // background: #0f0;
+    @include flex(center, center);
+    height: 60px;
+    font-size: 17px;
+    color: rgb(73, 73, 73);
+    font-family: $i;
+    position: relative;
+
+    &-label {
+      z-index: 1;
+      //   background: #f00;
+      //   background: #f00;
+      margin: 0;
+      background: rgb(30, 30, 30);
+      padding: 0 7.5px;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: rgb(73, 73, 73);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// <script></script>
+
+// <div class="login__container">
+//   <div class="login__logo">
+//     <a href="/#" class="global__logo global__logo--dark-theme">
+//       Senior<span class="global__logo--light global__logo--light--dark-theme"
+//         >ity</span
+//       >
+//     </a>
+//     <h5 class="login__subtitle">
+//       <i class="fa-solid fa-key" />
+//       <span class="login__subtitle-text">Logowanie</span>
+//     </h5>
+//   </div>
+
+//   <form class="login__form">
+//     <div class="login__input-container">
+//       <label for="login" class="login__form">Login</label>
+//       <input type="text" id="login" class="login__input" />
+//     </div>
+
+//     <div class="login__input-container">
+//       <label for="pass" class="login__form">Hasło</label>
+//       <input type="password" id="pass" class="login__input" />
+//     </div>
+
+//     <button type="submit" class="login__btn">Zaloguj się</button>
+//   </form>
+
+//   <span class="login__or">Inne działania</span>
+
+//   <button class="login__btn login__btn-platform--google">
+//     <i class="fa-brands fa-google" />
+//     <span class="login__btn-label">Kontynuuj przy użyciu konta Google</span>
+//   </button>
+
+//   <button class="login__btn login__btn-platform--facebook">
+//     <i class="fa-brands fa-facebook" />
+//     <span class="login__btn-label">Zaloguj się przez aplikację facebook</span>
+//   </button>
+
+//   <button class="login__btn login__btn-platform--apple">
+//     <i class="fa-brands fa-apple" />
+//     <span class="login__btn-label">Zaloguj się przy użyciu konta Apple</span>
+//   </button>
+// </div>
