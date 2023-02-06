@@ -1,8 +1,8 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// import SveltePreprocess from "svelte-preprocess";
 
-module.exports = {
+export default {
   entry: {
-    main: "./src/index.js",
+    main: "./src/index.ts",
   },
   module: {
     rules: [
@@ -19,7 +19,19 @@ module.exports = {
         test: /\.svelte$/,
         use: {
           loader: "svelte-loader",
+          // options: {
+          //   preprocess: SveltePreprocess({
+          //     typescript: {
+          //       tsconfigFile: "./tsconfig.json",
+          //     },
+          //   }),
+          // },
         },
+      },
+      {
+        test: /\.ts$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
       //Allows use of images
       {
@@ -39,5 +51,8 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: [".ts", ".js", ".svelte", ".scss"],
   },
 };
