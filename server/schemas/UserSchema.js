@@ -1,9 +1,11 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import { v4 as uuidv4 } from "uuid";
+import dateSchema from "./DateSchema.js";
 
 const { BACKEND_URL } = process.env;
 
 //? Tutaj masz opisany model Usera w bazie danych MongoDB
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
   firstName: {
     type: String,
     required: true,
@@ -20,25 +22,13 @@ const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
   },
   pass: {
     type: String,
     required: true,
   },
-  since: {
-    day: {
-      type: Number,
-      required: true,
-    },
-    month: {
-      type: Number,
-      required: true,
-    },
-    year: {
-      type: Number,
-      required: true,
-    },
-  },
+  since: [dateSchema],
   comments: {
     type: Number,
     required: true,
@@ -70,24 +60,22 @@ const UserSchema = new mongoose.Schema({
     default: "",
   },
   favorites: {
-    type: Array[String],
+    type: Array,
     required: true,
     default: [],
   },
-  birthDate: {
-    day: {
-      type: Number,
-      required: true,
-    },
-    month: {
-      type: Number,
-      required: true,
-    },
-    year: {
-      type: Number,
-      required: true,
-    },
+  birthDate: [dateSchema],
+  validationToken: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  isUserVerified: {
+    type: Boolean,
+    required: true,
+    default: false,
   },
 });
 
-export default mongoose.Model("User", UserSchema, "Users");
+const User = mongoose.model("User", UserSchema, "Users");
+export default User;

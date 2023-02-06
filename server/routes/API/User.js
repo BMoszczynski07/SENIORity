@@ -1,7 +1,151 @@
 import express from "express";
+import User from "../../schemas/UserSchema.js";
 import { UserLogin } from "../middleware/UserLogin.js";
+import bcrypt from "bcrypt";
+import { v4 as uuidv4 } from "uuid";
+import nodemailer from "nodemailer";
+import { emailLayout, handleEmailTitleLang } from "../../shared/emailLayout.js";
 
 const router = express.Router();
+
+const handleSaveUser = async (payload) => {
+  try {
+    const user = new User(payload);
+
+    await user.save();
+  } catch (e) {
+    console.error(`#ERR -> ${e.message}`.bgRed);
+  }
+};
+
+router.post("/register/:lang", (req, res) => {
+  const { lang } = req.params;
+  const { firstName, lastName, pass, birthDate, email } = req.body;
+
+  User.findOne({ email }, async (err, user) => {
+    if (err)
+      res.status(500).json({
+        ok: false,
+        res: "Rejestracja jest niemożliwa ze względu na problemy techniczne",
+      });
+    else {
+      if (user)
+        res.status(400).json({
+          ok: false,
+          res: "Użytkownik o podanym adresie email już istnieje!",
+        });
+      else {
+        const salt = await bcrypt.genSalt();
+        const hashedPass = await bcrypt.hash(pass, salt);
+        const curDate = new Date();
+        const { FRONTEND_URL, BACKEND_URL, USER, PASS } = process.env;
+
+        const transporter = nodemailer.createTransport({
+          host: "poczta.o2.pl",
+          port: 465,
+          secure: true,
+          auth: {
+            user: USER,
+            pass: PASS,
+          },
+        });
+
+        const user = {
+          firstName,
+          lastName,
+          img: BACKEND_URL + "/images/guest.png",
+          pass: hashedPass,
+          birthDate: {
+            day: birthDate.day,
+            month: birthDate.month,
+            year: birthDate.year,
+          },
+          since: {
+            day: curDate.getDay(),
+            month: curDate.getMonth(),
+            year: curDate.getYear(),
+          },
+          email,
+          desc: "Nowy użytkownik platformy SENIORity",
+          meetings: 0,
+          comments: 0,
+          articles: 0,
+          tutorials: 0,
+          role: 0,
+          favorites: [],
+          validationToken: uuidv4().toString(),
+          isUserVerified: false,
+        };
+
+        handleSaveUser(user);
+
+        let mail = {
+          from: USER,
+          to: email,
+          subject: handleEmailTitleLang({ lang }),
+          html: emailLayout({
+            lang,
+            FRONTEND_URL,
+            token: user.validationToken,
+          }),
+        };
+
+        transporter.sendMail(mail, (error, info) => {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log("Wiadomość została wysłana: " + info.response);
+          }
+        });
+
+        res.status(200).json({
+          ok: true,
+          res: "Rejestracja udana. Wiadomość z linkiem do aktywowania konta została wysłana na adres email",
+        });
+      }
+    }
+  });
+});
+
+router.patch("/verify/:token", async (req, res) => {
+  const { token } = req.params;
+
+  try {
+    await User.findOneAndUpdate(
+      { validationToken: token },
+      { isUserVerified: true }
+    );
+
+    res.status(200).json({
+      ok: true,
+      res: "Konto zostało zweryfikowane. Możesz teraz się zalogować",
+    });
+  } catch (e) {
+    console.error(e);
+
+    res.status(500).json({
+      ok: false,
+      res: "Weryfikacja konta jest niemożliwa z przyczyn technicznych",
+    });
+  }
+
+  // User.findOneAndUpdate({ token }, (err, user) => {
+  //   if (err)
+  //     res.status(404).json({
+  //       ok: false,
+  //       res: "Adres e-mail nie jest przypisany do żadnego konta!",
+  //     });
+
+  //   user.isUserVerified = true;
+
+  //   console.log(user);
+
+  //   res.status(200).json({
+  //     ok: true,
+  //     res: "Konto zostało zweryfikowane, możesz się teraz zalogować",
+  //   });
+  // });
+});
 
 router.get("/login", UserLogin, (req, res) => {
   // TODO: System logowania
@@ -29,11 +173,11 @@ router.get("/login", UserLogin, (req, res) => {
   //! Jeżeli udało się zalogować usera
   if (req.ok) {
     //! const token = <tutaj tworzysz token dla użytkownika>
-    // res.sendStatus(200).json({token, success: true}); //! W odpowiedzi z serwera zwracasz token
+    // res.status(200).json({token, success: true}); //! W odpowiedzi z serwera zwracasz token
   }
 
   //! Jeżeli nie udało się zalogować usera
-  // res.sendStatus(401).json({ success: false });
+  // res.status(401).json({ success: false });
 });
 
 export default router;
