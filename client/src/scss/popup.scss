@@ -1,0 +1,45 @@
+@import "../global.scss";
+
+.popup {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 3;
+  background: #fff;
+  padding-left: 10px;
+  padding-right: 55px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-left: 6px solid rgb(182, 0, 0);
+  font-size: 17px;
+  border-radius: 4px;
+  font-family: $i;
+  letter-spacing: -0.25px;
+  background: #ff8c8c;
+  display: flex;
+  align-items: center;
+  color: rgb(182, 0, 0);
+
+  &__i {
+    font-size: 25px;
+    margin-right: 9px;
+  }
+
+  &--ok {
+    background: rgb(132, 255, 132);
+    color: #118706;
+    border-left: 6px solid #118706;
+  }
+
+  &__text {
+    margin: 0;
+
+    &::before {
+      content: "";
+      height: 50px;
+      width: 50px;
+      background: #f00;
+      z-index: 3;
+    }
+  }
+}

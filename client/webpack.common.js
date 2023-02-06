@@ -2,7 +2,7 @@
 
 export default {
   entry: {
-    main: "./src/index.ts",
+    main: "./src/index.js",
   },
   module: {
     rules: [
@@ -27,11 +27,6 @@ export default {
           //   }),
           // },
         },
-      },
-      {
-        test: /\.ts$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
       },
       //Allows use of images
       {

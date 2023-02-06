@@ -111,15 +111,21 @@ router.patch("/verify/:token", async (req, res) => {
   const { token } = req.params;
 
   try {
-    await User.findOneAndUpdate(
+    const user = await User.findOneAndUpdate(
       { validationToken: token },
       { isUserVerified: true }
     );
 
-    res.status(200).json({
-      ok: true,
-      res: "Konto zostało zweryfikowane. Możesz teraz się zalogować",
-    });
+    if (user !== null)
+      res.status(200).json({
+        ok: true,
+        res: "Konto zostało zweryfikowane. Możesz teraz się zalogować",
+      });
+    else
+      res.status(404).json({
+        ok: false,
+        res: "Adres e-mail nie jest przypisany do żadnego konta!",
+      });
   } catch (e) {
     console.error(e);
 
