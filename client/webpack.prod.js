@@ -14,12 +14,16 @@ import TerserPlugin from "terser-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import process from "process";
+
+const __dirname = path.resolve();
+process.chdir(__dirname);
 
 export default merge(common, {
   mode: "production",
   output: {
     filename: "[fullhash].build.js",
-    path: path.resolve(__dirname, "dist"),
+    path: `${__dirname}/dist`,
   },
   optimization: {
     minimizer: [
@@ -50,5 +54,8 @@ export default merge(common, {
         ],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
 });

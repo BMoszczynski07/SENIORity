@@ -55,11 +55,11 @@
         >
       </div>
       <div class="main__actions">
-        <a href="/#/login" class="main__sign-up-btn main__sign-up-btn--login"
+        <a href="./#/login" class="main__sign-up-btn main__sign-up-btn--login"
           >Zaloguj się</a
         >
         <a
-          href="/#/register"
+          href="./#/register"
           class:main__sign-up-btn--register--dark-theme={$SiteThemes.theme ===
             "dark"}
           class="main__sign-up-btn main__sign-up-btn--register"

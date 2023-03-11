@@ -19,5 +19,5 @@
   <!-- <Background /> -->
   <Container />
 
-  <a href="/" class="login__link">Powrót do strony głównej</a>
+  <!-- <a href="/" class="login__link">Powrót do strony głównej</a> -->
 </main>
